@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+    <!-- Using Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calculator-container">
+        <!-- History Panel -->
+        <div class="history-panel" id="historyPanel">
+            <div class="history-header">
+                <span>History</span>
+                <button id="clearHistoryBtn" class="icon-btn">🗑️</button>
+            </div>
+            <ul id="historyList" class="history-list">
+                <!-- History items will be injected here via JS -->
+            </ul>
+        </div>
+
+        <div class="calculator">
+            <!-- Display Area -->
+            <div class="display">
+                <div class="display-header">
+                    <button id="toggleHistoryBtn" class="icon-btn" title="Toggle History">🕒</button>
+                    <button id="copyBtn" class="icon-btn" title="Copy Result">📋</button>
+                </div>
+                <div class="previous-operand" id="previousOperand"></div>
+                <div class="current-operand" id="currentOperand">0</div>
+            </div>
+
+            <!-- Keypad Area -->
+            <div class="keypad" id="keypad">
+                <!-- Row 1 -->
+                <button class="btn action" data-action="clear">AC</button>
+                <button class="btn action" data-action="delete">⌫</button>
+                <button class="btn action" data-action="percent">%</button>
+                <button class="btn operator" data-value="÷">÷</button>
+                
+                <!-- Row 2 -->
+                <button class="btn action" data-value="(">(</button>
+                <button class="btn action" data-value=")">)</button>
+                <button class="btn operator" data-value="×">×</button>
+                <button class="btn operator" data-value="-">-</button>
+
+                <!-- Row 3 -->
+                <button class="btn number" data-value="7">7</button>
+                <button class="btn number" data-value="8">8</button>
+                <button class="btn number" data-value="9">9</button>
+                <button class="btn operator operator-tall" data-value="+" style="grid-row: span 2;">+</button>
+
+                <!-- Row 4 -->
+                <button class="btn number" data-value="4">4</button>
+                <button class="btn number" data-value="5">5</button>
+                <button class="btn number" data-value="6">6</button>
+
+                <!-- Row 5 -->
+                <button class="btn number" data-value="1">1</button>
+                <button class="btn number" data-value="2">2</button>
+                <button class="btn number" data-value="3">3</button>
+                <button class="btn operator operator-tall equals" data-action="calculate" style="grid-row: span 2;">=</button>
+
+                <!-- Row 6 -->
+                <button class="btn action" data-action="toggle-sign">+/-</button>
+                <button class="btn number" data-value="0">0</button>
+                <button class="btn number" data-value=".">.</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
